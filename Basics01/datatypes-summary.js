@@ -69,4 +69,25 @@ console.log(typeof myObj);
 
 // Stack -> Primitive data type   -> Copy of variable will be provided
 
-// Heap -> Non-primitive data type -> Reference of variable
+// Heap -> Non-primitive data type -> Reference of 
+
+
+let name = "stack"
+
+let anotherName = name
+anotherName = "changed"
+
+console.log(name);
+console.log(anotherName);
+
+let userOne = {
+    email : "user@google.com",
+    upi: "user@ybl"
+}
+
+let userTwo = userOne
+
+userTwo.email = "ishav@google.com"
+
+console.log(userOne.email);
+console.log(userTwo.email);
