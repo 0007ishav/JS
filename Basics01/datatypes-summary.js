@@ -69,7 +69,7 @@ console.log(typeof myObj);
 
 // Stack -> Primitive data type   -> Copy of variable will be provided
 
-// Heap -> Non-primitive data type -> Reference of 
+// Heap -> Non-primitive data type -> Reference of variable
 
 
 let name = "stack"
