@@ -1,4 +1,4 @@
-const userEmail = "ishav@google.com"
+const userEmail = []
 
 // if (userEmail) {
 //     console.log("Got user email");
