@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Card from API</title>
+</head>
+<body>
+
+<div class="container">
+  <img
+    src=""
+    alt="XMLHttpRequest from github"
+    class="image"
+  />
+  <div class="overlay"></div>
+  <div class="content">
+    <h1 class="title">Product Title</h1>
+    <p>Followers: <span class="followers"> </span></div</p>
+    <p class="description">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, debitis?
+    </p>
+    <button class="cta-button">Get Data →</button>
+  </div>
+</div>
+
+</body>
+<script>
+    const requestUrl = "https://api.github.com/users/0007ishav"
+
+    const button = document.querySelector('.cta-button')
+    const url = document.querySelector('.image')
+    const title = document.querySelector('.title')
+    const bio = document.querySelector('.description')
+    const followers = document.querySelector('.followers')
+    const xhr = new XMLHttpRequest()
+
+    button.addEventListener('click', function(){
+
+        xhr.open('GET', requestUrl)
+        xhr.onreadystatechange = function(){
+            console.log(xhr.readyState);
+    
+            if(xhr.readyState === 4 && xhr.status == 200){
+                console.log(this.responseText);
+                const data = JSON.parse(this.responseText)
+                console.log(this.responseText);
+
+                url.src = (data.avatar_url)
+                title.innerHTML = (data.name)
+                bio.innerHTML = (data.bio)
+                followers.innerText =  (data.followers)
+
+            }
+        }
+        xhr.send()
+    })
+
+
+</script>
+</html>
